@@ -80,7 +80,8 @@ const navItems = [
 ];
 
 export default function Header() {
-  const homename = "멋쟁이사자처럼 서경대학교";
+  const homebtntext = "멋쟁이사자처럼 서경대학교";
+  const loginbtntext = "로그인/회원가입"
   const navigate = useNavigate();
 
   return (
@@ -89,17 +90,18 @@ export default function Header() {
         <HeaderLeft>
           <HomeBtn onClick={() => navigate("/")}>
             <LogoImage src={logoUrl} alt="Logo" />
-            {homename}
+            {homebtntext}
           </HomeBtn>
         </HeaderLeft>
-         <HeaderRight>{/*왼쪽 패딩 값과 NavBtn의 오른쪽 패딩 값을 같게 줘서 간격 맞춤*/}
+        <HeaderRight>
+          {/*왼쪽 패딩 값과 NavBtn의 오른쪽 패딩 값을 같게 줘서 간격 맞춤*/}
           {navItems.map((item) => (
             <NavBtn key={item.label} onClick={() => navigate(item.path)}>
               {item.label}
             </NavBtn>
           ))}
           <LoginBtn onClick={() => navigate("/login")}>
-            로그인/회원가입
+            {loginbtntext}
           </LoginBtn>
         </HeaderRight>
       </HeaderContainer>
